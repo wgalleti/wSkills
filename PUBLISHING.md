@@ -59,8 +59,11 @@ ou CLI quebrado.
 - Teste a instalação a partir do tarball, num diretório qualquer:
   ```bash
   npm pack
-  npx -y ./wgalleti-wskills-0.1.0.tgz list
+  npx -y --package=/caminho/wgalleti-wskills-0.1.0.tgz wskills list
   ```
+  Use `--package` com o **caminho absoluto**: `npx ./arquivo.tgz` tenta executar o próprio
+  tarball como comando e falha com `Permission denied`. Publicado no registry, a forma curta
+  (`npx @wgalleti/wskills list`) funciona normalmente.
 
 ## Troubleshooting
 
