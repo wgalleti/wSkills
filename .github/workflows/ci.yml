@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  quality:
+    name: Validate · Smoke · Format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # O catálogo e o CLI não têm dependência de runtime: rodam com node puro.
+      - name: Validar skills (estrutura + vazamento)
+        run: node scripts/validate.mjs
+        env:
+          WSKILLS_DENYLIST: ${{ secrets.WSKILLS_DENYLIST }}
+
+      - name: Smoke test do CLI
+        run: node scripts/smoke.mjs
+
+      - name: Format check
+        run: npx --yes prettier@3.6.2 --check "**/*.{mjs,json,md}"

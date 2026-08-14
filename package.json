@@ -1,0 +1,60 @@
+{
+  "name": "@wgalleti/wskills",
+  "version": "0.1.0",
+  "description": "Skills reutilizáveis para Claude Code: frontend Vue 3 + PrimeVue 4 + suite W*, padrão de MR/commits e documento de projeto.",
+  "type": "module",
+  "license": "MIT",
+  "author": "wgalleti",
+  "homepage": "https://github.com/wgalleti/wSkills#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wgalleti/wSkills.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wgalleti/wSkills/issues"
+  },
+  "keywords": [
+    "claude-code",
+    "claude",
+    "skills",
+    "agent-skills",
+    "vue",
+    "primevue",
+    "design-system",
+    "crud"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "packageManager": "yarn@1.22.22",
+  "bin": {
+    "wskills": "bin/wskills.mjs"
+  },
+  "files": [
+    "bin",
+    "skills",
+    "scripts/validate.mjs"
+  ],
+  "engines": {
+    "node": ">=18.17"
+  },
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "list": "node bin/wskills.mjs list",
+    "smoke": "node scripts/smoke.mjs",
+    "format": "prettier --write \"**/*.{mjs,json,md}\"",
+    "format:check": "prettier --check \"**/*.{mjs,json,md}\"",
+    "prepublishOnly": "yarn validate && yarn smoke",
+    "release": "commit-and-tag-version",
+    "release:dry": "commit-and-tag-version --dry-run",
+    "release:patch": "commit-and-tag-version --release-as patch",
+    "release:minor": "commit-and-tag-version --release-as minor",
+    "release:major": "commit-and-tag-version --release-as major",
+    "release:publish": "npm publish --registry https://registry.npmjs.org/ && git push --follow-tags origin main"
+  },
+  "devDependencies": {
+    "commit-and-tag-version": "^13.1.2",
+    "prettier": "^3.6.2"
+  }
+}

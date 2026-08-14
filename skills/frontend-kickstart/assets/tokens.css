@@ -1,0 +1,286 @@
+/* ============================================================================
+   TOKEN LAYER — ponto de partida para um projeto novo
+   Fonte única de verdade para cor, tipografia, espaçamento, raio, sombra.
+   Copie para `src/assets/css/tokens.css` e importe no `main.css`.
+   ----------------------------------------------------------------------------
+   AO ADOTAR NUM PROJETO NOVO: troque APENAS as escalas de marca abaixo
+   (11 degraus, 50…950). Os semânticos apontam para elas — reaponte, não
+   redefina. Escala tipográfica, raio, sombra, densidade e motion ficam como
+   estão: é o que dá consistência entre os projetos. Ver `references/design.md` §1.
+   ----------------------------------------------------------------------------
+   Modelo de marca (tri-color, um papel por vez):
+     • BLUE   → ação / primário            (--primary)
+     • NAVY   → estrutura / chrome / shell (--shell-*)
+     • GOLD   → destaque / acento          (--accent)
+   A escala GREEN fica reservada a status (aprovado) — verde nunca é ação.
+   ========================================================================== */
+
+:root {
+  /* ---- Brand: GREEN scale (ação) ---- */
+  --green-50:  #ecf8f1;
+  --green-100: #d2efdf;
+  --green-200: #a7dec1;
+  --green-300: #6fc79c;
+  --green-400: #3dab78;
+  --green-500: #1f8e5c;
+  --green-600: #197a4b;  /* brand core */
+  --green-700: #16623e;
+  --green-800: #154e33;
+  --green-900: #12402b;
+  --green-950: #072217;
+
+  /* ---- Brand: BLUE scale (ação / primário) — derivado do azul da logomarca ---- */
+  --blue-50:  #eef4fb;
+  --blue-100: #d7e6f6;
+  --blue-200: #b0cdec;
+  --blue-300: #7eaadd;
+  --blue-400: #4a82c7;
+  --blue-500: #2864ac;
+  --blue-600: #1f5092;  /* primary core */
+  --blue-700: #1c4179;
+  --blue-800: #1b3763;
+  --blue-900: #182d50;
+  --blue-950: #101f38;
+
+  /* ---- NAVY scale (estrutura / shell) ---- */
+  --navy-50:  #eef2f7;
+  --navy-100: #d6dfeb;
+  --navy-200: #aebfd4;
+  --navy-300: #7f97b6;
+  --navy-400: #506e94;
+  --navy-500: #335277;
+  --navy-600: #243f60;
+  --navy-700: #1a2f49;
+  --navy-800: #14283d;  /* shell base */
+  --navy-900: #0f1f30;
+  --navy-950: #0a1623;
+
+  /* ---- Brand: GOLD scale (acento) ---- */
+  --gold-50:  #fdf6e7;
+  --gold-100: #fbeaca;
+  --gold-200: #f6d491;
+  --gold-300: #efbb5c;
+  --gold-400: #e8b85c;
+  --gold-500: #d9952f;  /* accent core */
+  --gold-600: #be7d1e;
+  --gold-700: #97611a;
+  --gold-800: #7a4f1c;
+  --gold-900: #67431b;
+
+  /* ---- Status ---- */
+  --success: #1e8e54;
+  --success-soft: #e3f4ea;
+  --warning: #c7861f;
+  --warning-soft: #fbefd6;
+  --danger:  #d24b3b;
+  --danger-soft: #fbe6e3;
+  --info:    #2f7e97;
+  --info-soft: #e1f0f4;
+
+  /* ---- Data-viz (categórica) ---- */
+  --viz-1: #1f5092;
+  --viz-2: #d9952f;
+  --viz-3: #2f8f9e;
+  --viz-4: #b9543f;
+  --viz-5: #6b5e8c;
+  --viz-6: #2e8b57;
+
+  /* =========================================================
+     SEMANTIC — LIGHT (default)
+     ========================================================= */
+  --bg:            #f4f6f9;
+  --surface:       #ffffff;
+  --surface-2:     #f8fafc;
+  --surface-3:     #eef2f7;
+  --surface-inset: #f3f6fa;
+
+  --fg:        #141a22;
+  --fg-muted:  #5a6573;
+  --fg-subtle: #8794a3;
+  --fg-onbrand: #ffffff;
+
+  --border:        #e2e8f0;
+  --border-strong: #cdd6e2;
+  --border-focus:  var(--blue-600);
+
+  --primary:        var(--blue-600);
+  --primary-hover:  var(--blue-700);
+  --primary-active: var(--blue-800);
+  --primary-soft:   var(--blue-50);
+  --primary-fg:     #ffffff;
+
+  --accent:       var(--gold-500);
+  --accent-hover: var(--gold-600);
+  --accent-soft:  var(--gold-50);
+  --accent-fg:    #3a2a08;
+
+  --ring: color-mix(in srgb, var(--blue-600) 32%, transparent);
+
+  /* Shell (chrome) — navy constante nos dois modos */
+  --shell:        var(--navy-800);
+  --shell-2:      var(--navy-900);
+  --shell-fg:     #eaf0f7;
+  --shell-fg-muted: #9fb0c6;
+  --shell-fg-subtle: #6d809a;
+  --shell-hover:  rgba(255, 255, 255, 0.06);
+  --shell-active: rgba(255, 255, 255, 0.10);
+  --shell-border: rgba(255, 255, 255, 0.09);
+  --shell-accent: var(--gold-400);
+
+  /* =========================================================
+     TIPOGRAFIA
+     ========================================================= */
+  --font-sans: 'Satoshi', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --text-2xs: 0.6875rem;  /* 11 */
+  --text-xs:  0.75rem;    /* 12 */
+  --text-sm:  0.8125rem;  /* 13 */
+  --text-base:0.875rem;   /* 14 */
+  --text-md:  0.9375rem;  /* 15 */
+  --text-lg:  1.0625rem;  /* 17 */
+  --text-xl:  1.25rem;    /* 20 */
+  --text-2xl: 1.5rem;     /* 24 */
+  --text-3xl: 1.875rem;   /* 30 */
+  --text-4xl: 2.5rem;     /* 40 */
+
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-bold:    700;
+  --fw-black:   900;
+
+  --leading-tight: 1.2;
+  --leading-snug:  1.35;
+  --leading-normal:1.5;
+
+  /* =========================================================
+     RAIO
+     ========================================================= */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius:    8px;   /* default de controles */
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 999px;
+
+  /* =========================================================
+     SOMBRA (suave, em camadas, baixa opacidade)
+     ========================================================= */
+  --shadow-xs: 0 1px 2px rgba(16, 30, 24, 0.06);
+  --shadow-sm: 0 1px 2px rgba(16, 30, 24, 0.06), 0 1px 3px rgba(16, 30, 24, 0.08);
+  --shadow-md: 0 2px 4px rgba(16, 30, 24, 0.06), 0 4px 8px rgba(16, 30, 24, 0.08);
+  --shadow-lg: 0 4px 8px rgba(16, 30, 24, 0.07), 0 12px 24px rgba(16, 30, 24, 0.10);
+  --shadow-xl: 0 8px 16px rgba(16, 30, 24, 0.08), 0 24px 48px rgba(16, 30, 24, 0.14);
+
+  /* =========================================================
+     ESPAÇAMENTO (base 4px) — usado por utilitários
+     ========================================================= */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* =========================================================
+     DENSIDADE — valores default (= "balanced")
+     Sobrescritos por [data-density="compact"]
+     ========================================================= */
+  --control-h: 38px;
+  --control-h-sm: 32px;
+  --control-h-lg: 44px;
+  --control-px: 12px;
+  --field-gap: 6px;
+  --row-h: 44px;
+  --cell-py: 11px;
+  --card-pad: 20px;
+  --section-gap: 24px;
+  --ui-font: var(--text-base);
+
+  --motion-fast: 140ms;
+  --motion: 220ms;
+  --motion-slow: 380ms;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+/* =========================================================
+   DENSIDADE COMPACTA
+   ========================================================= */
+[data-density='compact'] {
+  --control-h: 32px;
+  --control-h-sm: 28px;
+  --control-h-lg: 38px;
+  --control-px: 10px;
+  --field-gap: 4px;
+  --row-h: 36px;
+  --cell-py: 7px;
+  --card-pad: 16px;
+  --section-gap: 18px;
+  --ui-font: var(--text-sm);
+}
+
+/* =========================================================
+   PREFERÊNCIAS DO USUÁRIO — tamanho e família de fonte
+   Aplicadas via atributo no <html>; persistidas em localStorage.
+   Texto é rem-based — escalar o root escala tudo proporcionalmente.
+   ========================================================= */
+html[data-fontsize='sm'] { font-size: 15px; }
+html[data-fontsize='md'] { font-size: 16px; }
+html[data-fontsize='lg'] { font-size: 17.5px; }
+
+html[data-font='system'] {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* =========================================================
+   SEMANTIC — DARK
+   Shell permanece navy; superfícies em slate frio (azul).
+   ========================================================= */
+.dark {
+  --bg:            #0c1219;
+  --surface:       #131b25;
+  --surface-2:     #1a232f;
+  --surface-3:     #212d3b;
+  --surface-inset: #0f1620;
+
+  --fg:        #e9eef4;
+  --fg-muted:  #a4b1c2;   /* contraste AA sobre --surface */
+  --fg-subtle: #8391a4;
+  --fg-onbrand:#0c1219;
+
+  --border:        #2c3949;
+  --border-strong: #42536b;
+
+  --primary:        var(--blue-300);
+  --primary-hover:  #9cc0e8;
+  --primary-active: #9cc0e8;
+  --primary-soft:   rgba(126, 170, 221, 0.16);
+  --primary-fg:     #0a1626;
+
+  --accent:       var(--gold-400);
+  --accent-hover: var(--gold-300);
+  --accent-soft:  rgba(232, 184, 92, 0.14);
+  --accent-fg:    #1c1404;
+
+  --ring: color-mix(in srgb, var(--blue-300) 40%, transparent);
+
+  --success-soft: rgba(30, 142, 84, 0.16);
+  --warning-soft: rgba(199, 134, 31, 0.16);
+  --danger-soft:  rgba(210, 75, 59, 0.16);
+  --info-soft:    rgba(47, 126, 151, 0.16);
+
+  /* Shell um pouco mais profundo no dark */
+  --shell:        var(--navy-900);
+  --shell-2:      var(--navy-950);
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.5), 0 12px 24px rgba(0, 0, 0, 0.6);
+  --shadow-xl: 0 8px 16px rgba(0, 0, 0, 0.5), 0 24px 48px rgba(0, 0, 0, 0.7);
+}
