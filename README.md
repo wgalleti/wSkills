@@ -131,12 +131,16 @@ v0/Bolt — cole no prompt inicial.
 O arquivo é **gerado** a partir dos guias em `references/` (o cabeçalho dele diz como
 regenerar). Edite os guias, nunca o gerado.
 
-## Boas práticas de Claude Code
+## Começando no Claude Code
 
-Time começando no Claude Code (principalmente no plano Pro, onde token conta):
-leia **[docs/claude-code-boas-praticas.md](docs/claude-code-boas-praticas.md)** —
-sessões, CLAUDE.md, prompts enxutos, markdowns de contexto, rtk, graphify e outras
-dicas de economia.
+Time novo no Claude Code (principalmente no plano Pro, onde token conta), na ordem:
+
+1. **[docs/claude-code-primeiros-passos.md](docs/claude-code-primeiros-passos.md)** —
+   passo a passo do zero: instalar (Windows/macOS/Linux), logar, instalar as skills
+   deste pacote, configurar o CLAUDE.md e sair usando.
+2. **[docs/claude-code-boas-praticas.md](docs/claude-code-boas-praticas.md)** — os
+   hábitos que fazem o plano render: sessões e /clear, prompts enxutos, markdowns de
+   contexto, rtk, graphify.
 
 ## Adaptar ao seu projeto
 
