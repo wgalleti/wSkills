@@ -146,9 +146,24 @@ vez custa menos que repetida em cada prompt, e é mais confiável que memória d
 
 O `CLAUDE.md` na raiz do projeto é lido **em toda sessão**. É onde mora o que você não
 quer repetir nunca mais: "aqui usamos yarn, não npm", "commits em inglês", "não rode
-format no repositório inteiro". Para criar o seu, cole isto na sessão:
+format no repositório inteiro". O caminho depende de onde você está:
+
+**Projeto existente** — o Claude analisa o que já está lá:
 
 > 💬 *Analise este projeto e crie um CLAUDE.md de **no máximo 60 linhas**. Inclua apenas: os comandos do projeto (rodar, testar, lint, build), as convenções que o código não mostra sozinho e as proibições importantes. Frases curtas e imperativas, uma regra por linha. NÃO inclua: história do projeto, lista de arquivos, descrição da arquitetura nem nada que você descobre lendo o código.*
+
+**Projeto novo, do zero** — não existe código para analisar, então a ordem inverte:
+primeiro instale as skills de bootstrap (Parte 3 — `frontend-kickstart` para um
+frontend no nosso stack), descreva o que quer construir e deixe o Claude montar a
+estrutura; o CLAUDE.md nasce **no final**, registrando as decisões tomadas:
+
+> 💬 *Quero começar um projeto novo: [descreva em 3–5 linhas o que é, para quem e o stack se já souber]. Use a skill frontend-kickstart como base, monte a estrutura inicial e me mostre o plano antes de criar os arquivos.*
+
+> 💬 *Agora crie o CLAUDE.md deste projeto (máximo 60 linhas): os comandos que acabamos de definir, as convenções que escolhemos e o que NÃO fazer. Uma regra por linha, imperativa.*
+
+**Já tem um CLAUDE.md** (seu ou gerado pelo `/init`) e ele está gordo? Otimize:
+
+> 💬 *Revise o CLAUDE.md deste projeto. Corte para no máximo 60 linhas: remova tudo que você descobre sozinho lendo o código (arquitetura, lista de arquivos, história), funda regras repetidas, converta prosa em frases imperativas de uma linha e mova conteúdo longo para `docs/` deixando só o apontador. Me mostre o diff antes de salvar.*
 
 Regras de manutenção (cada linha do CLAUDE.md entra em **todo** prompt — linha inútil
 é custo permanente):
@@ -282,18 +297,45 @@ ao agente uma capacidade nova. Dois que valem para o nosso fluxo:
 mesma moeda que o CLAUDE.md gasta. Três a cinco bem escolhidos é o teto; instale
 quando sentir a falta, remova o que não usa (`claude mcp list` / `claude mcp remove`).
 
+### frontend-design — visuais que não parecem feitos por IA
+
+Sem direção, todo agente de IA produz a mesma tela: fonte Inter, gradiente roxo, cards
+em grade — o "cara de template" que faz qualquer um preferir um Lovable da vida. O
+[frontend-design](https://claude.com/plugins/frontend-design) é o plugin **oficial da
+Anthropic** que corrige isso: antes de escrever uma linha de CSS, ele obriga o Claude a
+definir propósito, público e uma direção estética de verdade — tipografia com
+personalidade, paleta intencional, movimento que parece de designer sênior. Instalação
+é uma linha, dentro da sessão:
+
+```text
+/plugin install frontend-design@claude-plugins-official
+```
+
+Depois é só pedir a tela normalmente — a skill ativa sozinha quando o assunto é
+interface. O combo que gera os melhores resultados:
+
+1. **frontend-design** dá a ousadia estética;
+2. as skills deste pacote (`frontend-kickstart`/`prototipo-portal`) seguram a
+   identidade — tokens, cores e padrões do produto — para o ousado continuar **no
+   nosso** design system;
+3. **Playwright MCP** fecha o ciclo: o Claude abre a tela que criou, olha o resultado
+   e refina sozinho.
+
+> 💬 *crie a tela de [descreva] usando o design system do projeto; depois abra no navegador, tire um screenshot e refine o que não estiver à altura*
+
 ## Parte 7 — Resumo de bolso
 
 1. Instalar: `irm https://claude.ai/install.ps1 | iex` (Windows) — terminal novo —
    `claude --version`.
 2. `cd` no projeto → `claude` → login Pro no navegador.
 3. Skills: `npx @wgalleti/wskills add ...` → reiniciar sessão → `/skills`.
-4. CLAUDE.md pelo prompt pronto da Parte 4 — **até ~60 linhas**, regra por linha.
+4. CLAUDE.md pelos prompts prontos da Parte 4 (criar, começar do zero ou otimizar) —
+   **até ~60 linhas**, regra por linha.
 5. Rotina: um objetivo por prompt · `@arquivo` em vez de colar · Shift+Tab no grande ·
    ESC cedo · print no visual · `/clear` entre tarefas · estado da frente em markdown.
 6. rtk filtra a saída · graphify responde antes do grep · `graphify update .` depois de
    mexer · `npx ccusage` para ver onde o plano vai · MCPs com moderação (Context7,
-   Playwright).
+   Playwright) · frontend-design para tela bonita de verdade.
 
 Fontes oficiais: [instalação](https://code.claude.com/docs/en/setup) ·
 [quickstart](https://code.claude.com/docs/en/quickstart) ·
