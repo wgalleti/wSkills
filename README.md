@@ -133,14 +133,13 @@ regenerar). Edite os guias, nunca o gerado.
 
 ## Começando no Claude Code
 
-Time novo no Claude Code (principalmente no plano Pro, onde token conta), na ordem:
+Time novo no Claude Code (principalmente no plano Pro, onde token conta):
 
-1. **[docs/claude-code-primeiros-passos.md](docs/claude-code-primeiros-passos.md)** —
-   passo a passo do zero: instalar (Windows/macOS/Linux), logar, instalar as skills
-   deste pacote, configurar o CLAUDE.md e sair usando.
-2. **[docs/claude-code-boas-praticas.md](docs/claude-code-boas-praticas.md)** — os
-   hábitos que fazem o plano render: sessões e /clear, prompts enxutos, markdowns de
-   contexto, rtk, graphify.
+**[docs/claude-code.md](docs/claude-code.md)** — guia completo, do zero a produtivo:
+instalar (Windows/macOS/Linux, passo a passo com o terminal na mão), logar, instalar
+as skills deste pacote, montar o CLAUDE.md com prompt pronto, a rotina de trabalho que
+faz o Pro render o dia, e as ferramentas que multiplicam o plano (rtk, graphify,
+ccusage, MCPs) — quase tudo instalado pedindo ao próprio Claude.
 
 ## Adaptar ao seu projeto
 
