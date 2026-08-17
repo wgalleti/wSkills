@@ -50,8 +50,7 @@ npx @wgalleti/wskills add --all
 Reinicie a sessão do Claude Code depois de instalar. Confirme com `/skills` — a skill aparece
 pelo `name` do frontmatter.
 
-**Enquanto o pacote não estiver no npm** (ou se o seu npm bloquear fetch por git), clone e
-rode o CLI direto — o comportamento é idêntico:
+**Sem acesso ao npm?** Clone e rode o CLI direto — o comportamento é idêntico:
 
 ```bash
 git clone https://github.com/wgalleti/wSkills.git ~/wSkills
