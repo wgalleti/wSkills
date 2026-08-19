@@ -20,55 +20,63 @@ densidade; a criatividade vai em composição e hierarquia, não em paleta nova.
 ```css
 :root {
   /* ação (primário) */
-  --primary: #1f5092;        /* azul core */
+  --primary: #1f5092; /* azul core */
   --primary-hover: #1c4179;
-  --primary-soft: #eef4fb;   /* fundos suaves de seleção/realce */
+  --primary-soft: #eef4fb; /* fundos suaves de seleção/realce */
   --primary-fg: #ffffff;
 
   /* acento (máx. 1 uso por tela) */
-  --accent: #d9952f;         /* dourado core */
+  --accent: #d9952f; /* dourado core */
   --accent-soft: #fdf6e7;
 
   /* estrutura (topbar/sidebar) */
-  --shell: #14283d;          /* navy */
+  --shell: #14283d; /* navy */
   --shell-2: #0f1f30;
   --shell-fg: #eaf0f7;
   --shell-fg-muted: #9fb0c6;
-  --shell-accent: #e8b85c;   /* item ativo na navegação */
+  --shell-accent: #e8b85c; /* item ativo na navegação */
 
   /* status (com fundo suave correspondente) */
-  --success: #1e8e54;  --success-soft: #e3f4ea;
-  --warning: #c7861f;  --warning-soft: #fbefd6;
-  --danger:  #d24b3b;  --danger-soft:  #fbe6e3;
-  --info:    #2f7e97;  --info-soft:    #e1f0f4;
+  --success: #1e8e54;
+  --success-soft: #e3f4ea;
+  --warning: #c7861f;
+  --warning-soft: #fbefd6;
+  --danger: #d24b3b;
+  --danger-soft: #fbe6e3;
+  --info: #2f7e97;
+  --info-soft: #e1f0f4;
 
   /* séries de gráfico, nesta ordem (não reutilizar success/danger como categoria) */
-  --viz-1: #1f5092; --viz-2: #d9952f; --viz-3: #2f8f9e;
-  --viz-4: #b9543f; --viz-5: #6b5e8c; --viz-6: #2e8b57;
+  --viz-1: #1f5092;
+  --viz-2: #d9952f;
+  --viz-3: #2f8f9e;
+  --viz-4: #b9543f;
+  --viz-5: #6b5e8c;
+  --viz-6: #2e8b57;
 
   /* superfícies e texto (modo claro) */
-  --bg: #f4f6f9;             /* fundo da página */
-  --surface: #ffffff;        /* cards, tabelas */
-  --surface-2: #f8fafc;      /* cabeçalho de tabela, faixas */
+  --bg: #f4f6f9; /* fundo da página */
+  --surface: #ffffff; /* cards, tabelas */
+  --surface-2: #f8fafc; /* cabeçalho de tabela, faixas */
   --fg: #141a22;
-  --fg-muted: #5a6573;       /* texto secundário — use bastante */
+  --fg-muted: #5a6573; /* texto secundário — use bastante */
   --fg-subtle: #8794a3;
-  --border: #e2e8f0;         /* bordas quase brancas */
-  --border-strong: #cdd6e2;  /* só em inputs */
+  --border: #e2e8f0; /* bordas quase brancas */
+  --border-strong: #cdd6e2; /* só em inputs */
 
   /* forma */
-  --radius: 8px;             /* controles */
-  --radius-lg: 12px;         /* cards */
-  --radius-full: 999px;      /* tags/pills */
-  --shadow-sm: 0 1px 2px rgba(16,30,24,.06), 0 1px 3px rgba(16,30,24,.08);
-  --shadow-md: 0 2px 4px rgba(16,30,24,.06), 0 4px 8px rgba(16,30,24,.08);
+  --radius: 8px; /* controles */
+  --radius-lg: 12px; /* cards */
+  --radius-full: 999px; /* tags/pills */
+  --shadow-sm: 0 1px 2px rgba(16, 30, 24, 0.06), 0 1px 3px rgba(16, 30, 24, 0.08);
+  --shadow-md: 0 2px 4px rgba(16, 30, 24, 0.06), 0 4px 8px rgba(16, 30, 24, 0.08);
 
   /* densidade (app de trabalho: compacto, muita informação) */
-  --control-h: 38px;         /* altura de input/botão */
-  --row-h: 44px;             /* linha de tabela */
+  --control-h: 38px; /* altura de input/botão */
+  --row-h: 44px; /* linha de tabela */
   --card-pad: 20px;
   --section-gap: 24px;
-  --motion: 220ms;           /* transições curtas; nada de animação longa */
+  --motion: 220ms; /* transições curtas; nada de animação longa */
 }
 ```
 
@@ -208,7 +216,7 @@ modelo do sistema final quase sem tradução.
   fornecedor, pessoa) ficam enxutos e centrais; o que só um módulo usa vai numa tabela
   complementar 1-para-1, não em colunas novas no cadastro central.
 - **Histórico é imutável (ledger)**: movimentações, aprovações e eventos financeiros
-  são *append-only* — corrigir = lançar o movimento contrário com justificativa, nunca
+  são _append-only_ — corrigir = lançar o movimento contrário com justificativa, nunca
   editar nem apagar. Saldos e totais são **calculados** das linhas, não digitados.
 - **Trilha de decisão**: toda aprovação/rejeição gera um registro próprio (quem, papel,
   ação, quando, observação) em tabela de trilha — não só um campo `aprovado_por` no

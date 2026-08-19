@@ -20,7 +20,7 @@ modelo do sistema final quase sem tradução.
   fornecedor, pessoa) ficam enxutos e centrais; o que só um módulo usa vai numa tabela
   complementar 1-para-1, não em colunas novas no cadastro central.
 - **Histórico é imutável (ledger)**: movimentações, aprovações e eventos financeiros
-  são *append-only* — corrigir = lançar o movimento contrário com justificativa, nunca
+  são _append-only_ — corrigir = lançar o movimento contrário com justificativa, nunca
   editar nem apagar. Saldos e totais são **calculados** das linhas, não digitados.
 - **Trilha de decisão**: toda aprovação/rejeição gera um registro próprio (quem, papel,
   ação, quando, observação) em tabela de trilha — não só um campo `aprovado_por` no

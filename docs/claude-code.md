@@ -13,7 +13,7 @@ que faz o plano render.
 Só a instalação do Claude Code é manual. **Todo o resto você pede para o próprio
 Claude fazer** — os prompts prontos estão marcados assim ao longo do guia:
 
-> 💬 *prompt pronto — copie, cole na sessão do Claude e dê Enter*
+> 💬 _prompt pronto — copie, cole na sessão do Claude e dê Enter_
 
 ---
 
@@ -68,19 +68,19 @@ claude --version
 Apareceu um número de versão? Instalado. Algo estranho? `claude doctor` roda um
 diagnóstico completo e diz o que corrigir.
 
-| Problema | Solução |
-| --- | --- |
-| `claude: comando não encontrado` | Feche e abra o terminal de novo (de verdade — janela nova) |
-| Instalação bloqueada por antivírus/política | Rode o PowerShell como administrador só para instalar |
+| Problema                                         | Solução                                                                    |
+| ------------------------------------------------ | -------------------------------------------------------------------------- |
+| `claude: comando não encontrado`                 | Feche e abra o terminal de novo (de verdade — janela nova)                 |
+| Instalação bloqueada por antivírus/política      | Rode o PowerShell como administrador só para instalar                      |
 | Projeto em pasta com acento ou espaço no caminho | Mova para um caminho simples (`C:\projetos\meu-app`) — evita dor de cabeça |
 
 ### 1.5 Diferenças entre sistemas (o que muda na prática)
 
-| | Windows | macOS / Linux |
-| --- | --- | --- |
-| Shell que o Claude usa | Git Bash (se instalado) ou PowerShell | bash/zsh |
-| Caminhos | `C:\...` funciona; `~` = sua pasta de usuário | `~` normal |
-| WSL | Opcional — só se o projeto for Linux-first (Docker etc.); nesse caso instale o Claude Code **dentro** do WSL | — |
+|                        | Windows                                                                                                      | macOS / Linux |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------ | ------------- |
+| Shell que o Claude usa | Git Bash (se instalado) ou PowerShell                                                                        | bash/zsh      |
+| Caminhos               | `C:\...` funciona; `~` = sua pasta de usuário                                                                | `~` normal    |
+| WSL                    | Opcional — só se o projeto for Linux-first (Docker etc.); nesse caso instale o Claude Code **dentro** do WSL | —             |
 
 **Windows:** instale também o [Git for Windows](https://git-scm.com/downloads/win)
 (baixe, next-next-finish serve). Com ele o Claude Code passa a usar o Git Bash como
@@ -116,7 +116,7 @@ A partir daqui você não instala mais nada na mão: **peça ao Claude**. Ele ba
 instala, configura e confere — e se algo der errado, ele mesmo corrige. Exemplo, se
 ainda não tem o Node (necessário para o passo seguinte):
 
-> 💬 *instale o Node LTS nesta máquina (winget no Windows, brew no macOS), confirme com `node --version` e me diga se preciso reabrir o terminal*
+> 💬 _instale o Node LTS nesta máquina (winget no Windows, brew no macOS), confirme com `node --version` e me diga se preciso reabrir o terminal_
 
 ## Parte 3 — Instalar as skills
 
@@ -150,20 +150,20 @@ format no repositório inteiro". O caminho depende de onde você está:
 
 **Projeto existente** — o Claude analisa o que já está lá:
 
-> 💬 *Analise este projeto e crie um CLAUDE.md de **no máximo 60 linhas**. Inclua apenas: os comandos do projeto (rodar, testar, lint, build), as convenções que o código não mostra sozinho e as proibições importantes. Frases curtas e imperativas, uma regra por linha. NÃO inclua: história do projeto, lista de arquivos, descrição da arquitetura nem nada que você descobre lendo o código.*
+> 💬 _Analise este projeto e crie um CLAUDE.md de **no máximo 60 linhas**. Inclua apenas: os comandos do projeto (rodar, testar, lint, build), as convenções que o código não mostra sozinho e as proibições importantes. Frases curtas e imperativas, uma regra por linha. NÃO inclua: história do projeto, lista de arquivos, descrição da arquitetura nem nada que você descobre lendo o código._
 
 **Projeto novo, do zero** — não existe código para analisar, então a ordem inverte:
 primeiro instale as skills de bootstrap (Parte 3 — `frontend-kickstart` para um
 frontend no nosso stack), descreva o que quer construir e deixe o Claude montar a
 estrutura; o CLAUDE.md nasce **no final**, registrando as decisões tomadas:
 
-> 💬 *Quero começar um projeto novo: [descreva em 3–5 linhas o que é, para quem e o stack se já souber]. Use a skill frontend-kickstart como base, monte a estrutura inicial e me mostre o plano antes de criar os arquivos.*
+> 💬 _Quero começar um projeto novo: [descreva em 3–5 linhas o que é, para quem e o stack se já souber]. Use a skill frontend-kickstart como base, monte a estrutura inicial e me mostre o plano antes de criar os arquivos._
 
-> 💬 *Agora crie o CLAUDE.md deste projeto (máximo 60 linhas): os comandos que acabamos de definir, as convenções que escolhemos e o que NÃO fazer. Uma regra por linha, imperativa.*
+> 💬 _Agora crie o CLAUDE.md deste projeto (máximo 60 linhas): os comandos que acabamos de definir, as convenções que escolhemos e o que NÃO fazer. Uma regra por linha, imperativa._
 
 **Já tem um CLAUDE.md** (seu ou gerado pelo `/init`) e ele está gordo? Otimize:
 
-> 💬 *Revise o CLAUDE.md deste projeto. Corte para no máximo 60 linhas: remova tudo que você descobre sozinho lendo o código (arquitetura, lista de arquivos, história), funda regras repetidas, converta prosa em frases imperativas de uma linha e mova conteúdo longo para `docs/` deixando só o apontador. Me mostre o diff antes de salvar.*
+> 💬 _Revise o CLAUDE.md deste projeto. Corte para no máximo 60 linhas: remova tudo que você descobre sozinho lendo o código (arquitetura, lista de arquivos, história), funda regras repetidas, converta prosa em frases imperativas de uma linha e mova conteúdo longo para `docs/` deixando só o apontador. Me mostre o diff antes de salvar._
 
 Regras de manutenção (cada linha do CLAUDE.md entra em **todo** prompt — linha inútil
 é custo permanente):
@@ -173,7 +173,7 @@ Regras de manutenção (cada linha do CLAUDE.md entra em **todo** prompt — lin
 - **Regra, não prosa.** "Não rode `yarn format` repo-wide" vale ouro; três parágrafos
   sobre a história do projeto valem tokens jogados fora.
 - Corrigiu o Claude **duas vezes** pela mesma coisa? É uma linha nova. Peça na hora:
-  > 💬 *adicione essa regra ao CLAUDE.md, em uma linha imperativa*
+  > 💬 _adicione essa regra ao CLAUDE.md, em uma linha imperativa_
 - Hierarquia: `~/.claude/CLAUDE.md` (pessoal, vale em tudo) → `CLAUDE.md` da raiz
   (regras do time, versionado) → `CLAUDE.md` por pasta (regras daquele app). Cada regra
   no nível mais específico possível.
@@ -191,17 +191,17 @@ claude       inicia a sessão na pasta do projeto
 claude -c    continua a conversa anterior
 ```
 
-| Situação | O que fazer |
-| --- | --- |
-| Pedir algo | **Um objetivo por prompt**, com critério de aceite: *"...e o teste X tem que passar"* |
-| Apontar um arquivo | `@caminho/arquivo` — **nunca cole conteúdo grande** no prompt; log gigante → salve em arquivo e aponte |
-| Tarefa grande ou arriscada | **Shift+Tab** (plan mode): o Claude planeja antes de mexer e você corrige a rota **antes** de gastar a execução |
-| Rumo errado | **ESC** interrompe na hora — interromper cedo é a maior economia que existe |
-| Bug visual | Cole o print (**Ctrl+V**) em vez de descrever a tela |
-| Claude perguntou "A ou B?" | Responda "A" — direto, sem parágrafo |
-| Terminou a tarefa | `/clear` — sessão nova para o próximo assunto |
-| Sessão longa no meio da tarefa | `/compact` resume o histórico e libera espaço |
-| Perdido | `/help` · `/status` · `/skills` |
+| Situação                       | O que fazer                                                                                                     |
+| ------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| Pedir algo                     | **Um objetivo por prompt**, com critério de aceite: _"...e o teste X tem que passar"_                           |
+| Apontar um arquivo             | `@caminho/arquivo` — **nunca cole conteúdo grande** no prompt; log gigante → salve em arquivo e aponte          |
+| Tarefa grande ou arriscada     | **Shift+Tab** (plan mode): o Claude planeja antes de mexer e você corrige a rota **antes** de gastar a execução |
+| Rumo errado                    | **ESC** interrompe na hora — interromper cedo é a maior economia que existe                                     |
+| Bug visual                     | Cole o print (**Ctrl+V**) em vez de descrever a tela                                                            |
+| Claude perguntou "A ou B?"     | Responda "A" — direto, sem parágrafo                                                                            |
+| Terminou a tarefa              | `/clear` — sessão nova para o próximo assunto                                                                   |
+| Sessão longa no meio da tarefa | `/compact` resume o histórico e libera espaço                                                                   |
+| Perdido                        | `/help` · `/status` · `/skills`                                                                                 |
 
 **Por que `/clear` importa tanto:** continuar "na mesma conversa" arrasta todo o
 histórico para dentro de cada novo prompt — você paga por ele a cada mensagem, sem
@@ -211,9 +211,10 @@ ganhar nada. Uma tarefa por sessão, limpou, próxima.
 
 - Mantenha um `PLANO.md`/`NOTAS.md` da frente: o que foi decidido, o que falta, as
   pegadinhas descobertas. Peça ao próprio Claude para mantê-lo:
-  > 💬 *marque este item como feito no PLANO.md e anote a decisão que tomamos*
+  > 💬 _marque este item como feito no PLANO.md e anote a decisão que tomamos_
 - Vai parar por hoje? Antes de sair:
-  > 💬 *resuma o estado desta frente no NOTAS.md para eu retomar amanhã*
+
+  > 💬 _resuma o estado desta frente no NOTAS.md para eu retomar amanhã_
 
   Amanhã, sessão nova + `@NOTAS.md` custa uma fração de reabrir a conversa gigante.
 
@@ -234,7 +235,7 @@ entrar na conversa** — tipicamente 60–90% menos tokens nessas saídas, que s
 maiores da sessão. Com o hook configurado é transparente: o Claude pede `git status` e
 o hook reescreve para `rtk git status`, sem você fazer nada.
 
-> 💬 *instale o rtk (Rust Token Killer, https://www.rtk-ai.app — no macOS é `brew install rtk`; em outros sistemas siga o site) e configure o hook dele no Claude Code para reescrever os comandos automaticamente. Confirme com `rtk --version` e `rtk gain`.*
+> 💬 _instale o rtk (Rust Token Killer, https://www.rtk-ai.app — no macOS é `brew install rtk`; em outros sistemas siga o site) e configure o hook dele no Claude Code para reescrever os comandos automaticamente. Confirme com `rtk --version` e `rtk gain`._
 
 Comandos úteis depois de instalado:
 
@@ -252,7 +253,7 @@ perguntas de arquitetura ("onde nasce o saldo?", "quem chama esse service?"), o 
 consulta o grafo e recebe um subgrafo pequeno — muito mais barato do que deixá-lo
 grepear e ler dezenas de arquivos.
 
-> 💬 *instale o graphify (https://github.com/Graphify-Labs/graphify — pacote `graphifyy`, via `uv tool install graphifyy`; instale o uv antes se precisar), rode `graphify install` para registrar a skill no Claude Code e depois gere o grafo deste projeto.*
+> 💬 _instale o graphify (https://github.com/Graphify-Labs/graphify — pacote `graphifyy`, via `uv tool install graphifyy`; instale o uv antes se precisar), rode `graphify install` para registrar a skill no Claude Code e depois gere o grafo deste projeto._
 
 Uso no dia a dia:
 
@@ -287,11 +288,11 @@ ao agente uma capacidade nova. Dois que valem para o nosso fluxo:
 - **[Context7](https://github.com/upstash/context7)** — documentação **atualizada e da
   versão certa** de qualquer biblioteca (Vue, PrimeVue, Django…). Sem ele, o Claude
   responde da memória, que pode estar defasada.
-  > 💬 *adicione o MCP do Context7 (https://github.com/upstash/context7) na minha configuração do Claude Code e confirme com /mcp*
+  > 💬 _adicione o MCP do Context7 (https://github.com/upstash/context7) na minha configuração do Claude Code e confirme com /mcp_
 - **[Playwright MCP](https://github.com/microsoft/playwright-mcp)** — um navegador que
   o Claude controla: ele abre a tela que acabou de mexer, clica, preenche e tira
   screenshot para **verificar o próprio trabalho** em vez de supor que funcionou.
-  > 💬 *adicione o MCP do Playwright (https://github.com/microsoft/playwright-mcp) na minha configuração do Claude Code e confirme com /mcp*
+  > 💬 _adicione o MCP do Playwright (https://github.com/microsoft/playwright-mcp) na minha configuração do Claude Code e confirme com /mcp_
 
 **Não colecione MCPs.** Cada server instalado consome contexto de toda sessão — a
 mesma moeda que o CLAUDE.md gasta. Três a cinco bem escolhidos é o teto; instale
@@ -321,7 +322,7 @@ interface. O combo que gera os melhores resultados:
 3. **Playwright MCP** fecha o ciclo: o Claude abre a tela que criou, olha o resultado
    e refina sozinho.
 
-> 💬 *crie a tela de [descreva] usando o design system do projeto; depois abra no navegador, tire um screenshot e refine o que não estiver à altura*
+> 💬 _crie a tela de [descreva] usando o design system do projeto; depois abra no navegador, tire um screenshot e refine o que não estiver à altura_
 
 ## Parte 7 — Resumo de bolso
 
