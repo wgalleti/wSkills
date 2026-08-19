@@ -1,6 +1,6 @@
 {
   "name": "@wgalleti/wskills",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Skills reutilizáveis para Claude Code: frontend Vue 3 + PrimeVue 4 + suite W*, padrão de MR/commits e documento de projeto.",
   "type": "module",
   "license": "MIT",

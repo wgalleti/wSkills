@@ -1,9 +1,20 @@
 # Changelog
 
-Todas as mudanças relevantes deste projeto são documentadas aqui. O arquivo é gerado a partir
-dos conventional commits por [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version)
-— ver [PUBLISHING.md](PUBLISHING.md).
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.3.0](https://github.com/wgalleti/wSkills/compare/v0.2.0...v0.3.0) (2026-08-19)
+
+### Skills e funcionalidades
+
+* skill novo-projeto — porta de entrada que orquestra as demais ([e99c596](https://github.com/wgalleti/wSkills/commit/e99c596f40a03128d4bd77aaf89d150873d991f2))
+* skill prototipo-api — backend de protótipo sem Docker/WSL ([e03f17f](https://github.com/wgalleti/wSkills/commit/e03f17f21bfe4292fb38148b39bb88b988625e39))
+* skill sdd — documentação simplificada em quatro arquivos ([d4a03a3](https://github.com/wgalleti/wSkills/commit/d4a03a395bc7cb8285eae526aabbc7969d1a5bd2))
+* skill ui-rica — direção e auto-revisão visual de telas ([4cd3fd2](https://github.com/wgalleti/wSkills/commit/4cd3fd225722b15cf0aa8fab8e97c710d1ac55a0))
+
+### Documentação
+
+* catálogo com as skills novas e destaque da porta de entrada ([f31dd67](https://github.com/wgalleti/wSkills/commit/f31dd67f4244d82cc0e4e4790b19df859e10a285))
+* package is on npm — reword clone fallback ([8789f66](https://github.com/wgalleti/wSkills/commit/8789f669f7afef65749c7c4d14831f1977c53e70))
 ## [0.2.0](https://github.com/wgalleti/wSkills/compare/v0.1.0...v0.2.0) (2026-08-17)
 
 ### Skills e funcionalidades
