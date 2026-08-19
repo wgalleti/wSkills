@@ -113,28 +113,25 @@ contexto e o limite — o agente não gasta idas e voltas adivinhando.
 
 **Ajustar uma tela:**
 
-> Na tela de [nome da tela], [o que está errado ou o que quer mudar — ex.: o valor
-> deveria aparecer antes do status]. Mude só isso; se alguma regra mudar junto, atualize
-> os docs.
+> Na tela de [nome da tela], [o que mudar — ex.: mostrar o valor antes do status].
+> Mude só isso; se alguma regra mudar junto, atualize os docs.
 
 **Tela ficou pobre / mal aproveitada:**
 
-> A tela de [nome da tela] ficou visualmente pobre: [o que incomoda — ex.: espaços mal
-> aproveitados, formulário esticado, a imagem não aparece]. Use a skill ui-rica: revise
-> a tela pelo checklist dela, aproveite os componentes que já existem no projeto e
-> aplique o mesmo padrão nas outras telas que tiverem o mesmo problema.
+> A tela de [nome da tela] ficou pobre: [ex.: espaço mal usado, a imagem não aparece].
+> Use a skill ui-rica: revise a tela pelo checklist dela, aproveite os componentes que
+> já existem no projeto e aplique o mesmo padrão nas outras telas com o mesmo problema.
 
 **Mudança de regra de negócio:**
 
-> A regra de [assunto] mudou: agora [a regra nova — ex.: acima de R$ 500 já exige
-> aprovação]. Atualize notes.md e validation.md, aplique no que já foi construído e me
-> diga o que mais foi afetado.
+> A regra de [assunto] mudou: agora [a regra nova — ex.: acima de R$ 500 exige aval].
+> Atualize notes.md e validation.md, aplique no que já foi construído e me diga o que
+> mais foi afetado.
 
 **Fechar uma onda:**
 
 > Acho que a onda atual terminou. Confira tasks.md e validation.md, me mostre o que
-> ficou pendente e, se estiver tudo certo, feche a onda [se versiona: e faça o commit
-> da onda].
+> ficou pendente e, se estiver tudo certo, feche a onda [se versiona: e faça o commit].
 
 **Preparar a conversão (fase 5):**
 
