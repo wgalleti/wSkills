@@ -23,6 +23,8 @@ direção, não fidelidade de stack.
    - `references/03-padroes-dados-api.md` — modelagem (UUID, carimbos, enums de status,
      ledger, trilha de aprovação, dados sensíveis) e forma da API. **Quando houver
      banco ou backend.**
+   - Protótipo precisa de um backend **rodando**, sem Docker/Postgres/Django? Use a
+     skill `prototipo-api` — servidor Node de arquivo único no contrato do portal.
 2. Trate tudo como **direção, não regra**: ideia melhor que conflita com um guia ganha —
    mas deixe o desvio anotado (comentário ou nota na tela), para a conversão não tratar
    como erro.

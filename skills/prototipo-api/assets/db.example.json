@@ -1,0 +1,47 @@
+{
+  "_schema": {
+    "pedidos-reembolso": {
+      "searchFields": ["colaborador"],
+      "extras": {
+        "total_pendente": { "op": "sum", "campo": "valor", "quando": { "status": "pendente" } },
+        "quantidade_pendente": { "op": "count", "quando": { "status": "pendente" } }
+      },
+      "campos": {
+        "colaborador": { "tipo": "texto", "obrigatorio": true },
+        "data": { "tipo": "data", "obrigatorio": true },
+        "valor": { "tipo": "decimal", "obrigatorio": true },
+        "comprovante": { "tipo": "arquivo" },
+        "status": {
+          "tipo": "enum",
+          "opcoes": ["pendente", "aprovado", "recusado", "pago"],
+          "padrao": "pendente"
+        },
+        "motivo_recusa": { "tipo": "texto" }
+      }
+    }
+  },
+  "pedidos-reembolso": [
+    {
+      "id": "0b6f3d1a-6a4e-4d5b-9a34-9a1c2f0d8e01",
+      "colaborador": "Ana Souza",
+      "data": "2026-08-10",
+      "valor": 182.5,
+      "comprovante": "nota-taxi.pdf",
+      "status": "pendente",
+      "motivo_recusa": null,
+      "criado_em": "2026-08-10T14:02:00.000Z",
+      "atualizado_em": "2026-08-10T14:02:00.000Z"
+    },
+    {
+      "id": "5c1d9e77-2b30-49aa-8f5e-3d4b6a7c8e02",
+      "colaborador": "Bruno Lima",
+      "data": "2026-08-05",
+      "valor": 1250,
+      "comprovante": "hotel.pdf",
+      "status": "aprovado",
+      "motivo_recusa": null,
+      "criado_em": "2026-08-05T09:30:00.000Z",
+      "atualizado_em": "2026-08-07T11:15:00.000Z"
+    }
+  ]
+}
