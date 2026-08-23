@@ -41,6 +41,10 @@
   },
   "scripts": {
     "validate": "node scripts/validate.mjs",
+    "site:sync": "node scripts/site-sync.mjs",
+    "site:dev": "yarn site:sync && vitepress dev site",
+    "site:build": "yarn site:sync && vitepress build site",
+    "site:preview": "vitepress preview site",
     "list": "node bin/wskills.mjs list",
     "smoke": "node scripts/smoke.mjs",
     "format": "prettier --write \"**/*.{mjs,json,md}\"",
@@ -55,6 +59,7 @@
   },
   "devDependencies": {
     "commit-and-tag-version": "^13.1.2",
-    "prettier": "3.6.2"
+    "prettier": "3.6.2",
+    "vitepress": "^1.6.4"
   }
 }

@@ -4,6 +4,9 @@ Skills reutilizáveis de [Claude Code](https://claude.com/claude-code), extraíd
 operacional em produção (Vue 3 + PrimeVue 4 + Django REST) e generalizadas para servir a
 qualquer projeto com o mesmo stack.
 
+**📖 Documentação completa, com busca e exemplos de uso:
+[wgalleti.github.io/wSkills](https://wgalleti.github.io/wSkills/)**
+
 Uma **skill** é um conjunto de instruções que o agente carrega sozinho quando a tarefa
 combina com a descrição dela — regra de arquitetura, padrão de tela, convenção de commit.
 Em vez de repetir "lembra que aqui a gente faz assim" a cada sessão, a regra mora num arquivo

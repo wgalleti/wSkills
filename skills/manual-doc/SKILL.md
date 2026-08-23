@@ -62,7 +62,7 @@ Dado "documenta a tela X":
 
 ## Modo refresh
 
-"refresh <slug>": regrava **só as mídias** da página (mesmos nomes de arquivo, mesmos passos do
+`refresh <slug>`: regrava **só as mídias** da página (mesmos nomes de arquivo, mesmos passos do
 texto existente), sem reescrever uma linha de texto. Use após mudança visual de tela. Se o
 texto não bater mais com a tela (campo sumiu, passo mudou), pare e avise — aí é modo completo.
 
