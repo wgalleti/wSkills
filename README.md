@@ -32,6 +32,9 @@ exemplos fase a fase: [docs/novo-projeto.md](docs/novo-projeto.md).
 | **`sdd`**                | **Documentar um projeto no padrão SDD simplificado**: quatro arquivos em `docs/` (context, tasks, notes, validation) e uma linha no `CLAUDE.md` que obriga o padrão — para qualquer pessoa modelar um projeto que depois possa ser convertido em estrutura maior (portal, API, app).                                                                           |
 | **`prototipo-api`**      | **Backend de protótipo sem Docker/WSL**: servidor Node de arquivo único que gera a API a partir de um `db.json` declarativo, no mesmo contrato do portal (envelope, `take`/`skip`, erros DRF em pt-BR) — o frontend funciona sem adaptação e a conversão para Django/DRF sai barata.                                                                           |
 | **`ui-rica`**            | **Direção e auto-revisão visual de telas**, independente de stack: carregar a direção de design disponível (plugin de frontend design, tokens do projeto, guias das outras skills), usar os componentes que já existem antes de reinventar, e passar um checklist de espaço/hierarquia/riqueza antes de entregar — para a primeira versão da tela já sair boa. |
+| **`geojson`**            | **Padrões de GeoJSON/geometria** (contornos de área): formato canônico WGS84 2D, importação com reprojeção UTM, geometria nunca em listagem, endpoint paginado + render progressivo no mapa, versionamento de desenhos.                                                                                                                                        |
+| **`manual-doc`**         | **Produzir página de manual de uso** de um app web: levantar o comportamento real no código, operar a tela com dados de demonstração (zero dado real — o manual é público), capturar screenshots/GIFs e redigir no vocabulário da `documento`.                                                                                                                 |
+| **`projeto`**            | **Amarrar o worktree a um card de projeto** (kanban do portal) e manter documento, tarefas e status em dia via um CLI de boca única (implementação de referência em Django incluída): resolução híbrida uuid → nome → branch, saída JSON, ambiguidade = pergunta.                                                                                              |
 | **`prototipo-portal`**   | **Prototipar fora do portal** (Lovable, MVP, prova de conceito) já no padrão do destino: identidade visual com tokens prontos, os 7 padrões de tela e a forma de dados/API — para a conversão custar menos.                                                                                                                                                    |
 
 Detalhe de uma skill antes de instalar:
@@ -149,9 +152,20 @@ as skills deste pacote, montar o CLAUDE.md com prompt pronto, a rotina de trabal
 faz o Pro render o dia, e as ferramentas que multiplicam o plano (rtk, graphify,
 ccusage, MCPs) — quase tudo instalado pedindo ao próprio Claude.
 
+## Worktrees paralelos com Orca
+
+Além das skills, o repositório traz um kit para rodar um **monorepo dentro do
+[Orca](https://www.onorca.dev/)** com API, frontend e banco Postgres isolados por worktree —
+portas por slot, clone do banco de dev, teardown/limpeza automáticos e MR draft por frente
+de trabalho. O contexto assumido: banco em Docker, API e frontend subindo nativos no terminal.
+
+**[docs/orca-worktrees.md](docs/orca-worktrees.md)** — o desenho completo e o checklist de
+adaptação; scripts prontos para copiar em [docs/orca/](docs/orca/).
+
 ## Adaptar ao seu projeto
 
-`frontend-kickstart` e `wpvc` funcionam como vêm. `portal-frontend` e `documento` descrevem
+`frontend-kickstart` e `wpvc` funcionam como vêm. `portal-frontend`, `documento`, `geojson`,
+`manual-doc` e `projeto` descrevem
 regras de um portal específico e trazem um bloco **"adapte ao instalar"** no topo: ajuste os
 caminhos de arquivo, o nome da paleta e os gotchas para a sua realidade, e apague o que não
 se aplica. Skill que descreve um repositório que não é o seu vira ruído — e ruído o agente
