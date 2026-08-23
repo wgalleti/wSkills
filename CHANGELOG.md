@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.4.0](https://github.com/wgalleti/wSkills/compare/v0.3.0...v0.4.0) (2026-08-23)
+
+### Skills e funcionalidades
+
+* skills geojson, manual-doc e projeto + kit de worktrees Orca ([47543e2](https://github.com/wgalleti/wSkills/commit/47543e2359d3477750fade9db848734eecc31c33))
+
+### Correções
+
+* formatação estável no prettier 3.6.2 do CI ([98b0171](https://github.com/wgalleti/wSkills/commit/98b0171a759088acf7c7546da5e73d73d3aa7706))
 ## [0.3.0](https://github.com/wgalleti/wSkills/compare/v0.2.0...v0.3.0) (2026-08-19)
 
 ### Skills e funcionalidades
