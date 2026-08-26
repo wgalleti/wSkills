@@ -1,6 +1,6 @@
 ---
 name: mr
-description: "Use ao criar ou atualizar a descrição de um Merge Request / Pull Request e ao escrever as mensagens de commit de uma frente de trabalho. Traz o padrão editorial do MR — fluxo Problema → Análise → Solução → Validação, em pt-BR legível por gestão não técnica — e as regras de commit (conventional commits, um assunto por commit). Dispare em pedidos como 'abre o MR', 'documenta o MR', 'atualiza a descrição do MR', 'prepara os commits dessa frente', e sempre que for marcar operações feitas no checklist do MR."
+description: "Use ao criar ou atualizar a descrição de um Merge Request / Pull Request e ao escrever as mensagens de commit de uma frente de trabalho. Traz o padrão editorial do MR — fluxo Problema → Análise → Solução → Validação, em pt-BR legível por gestão não técnica — as regras de commit (conventional commits, um assunto por commit) e o padrão de hotfix (MR direto na branch de produção). Dispare em pedidos como 'abre o MR', 'documenta o MR', 'atualiza a descrição do MR', 'prepara os commits dessa frente', 'abre um hotfix', e sempre que for marcar operações feitas no checklist do MR."
 ---
 
 # MR e commits — padrão da frente de trabalho
@@ -92,7 +92,30 @@ Inglês, conventional commits — o MR traduz para gestão, o commit não precis
 - Commit que conclui uma operação do checklist → marque a operação no MR na sequência. É esse
   par (commit técnico + checklist legível) que mantém os dois públicos servidos.
 
-## 5. Se o fluxo cria o MR automaticamente
+## 5. Hotfix — MR direto na branch de produção
+
+Vale quando o repositório tem duas branches protegidas (ex.: `develop` → homologação,
+`main` → produção) e um fluxo de correção urgente que entra por MR direto na branch de
+produção. O que muda para quem escreve o MR:
+
+- Branch `hotfix/*` criada da branch de produção **atualizada**; o alvo do MR é a
+  produção, não a de desenvolvimento. Correção sem urgência segue o fluxo normal
+  (`fix/*` → develop).
+- **Sem squash** — se a pipeline detecta o hotfix pelo merge commit
+  (`Merge branch 'hotfix/...'`), o squash quebra a detecção. Melhor ainda: bloqueie o
+  squash no projeto inteiro (GitLab: `squash_option: never`, via UI ou
+  `glab api -X PUT projects/:id -f squash_option=never`).
+- Descrição segue o mesmo Problema → Análise → Solução → Validação, mas o Problema abre
+  com o efeito em produção ("desde a release X, o usuário não consegue…").
+- Validação precisa dizer como a correção foi conferida **antes** do merge — nesse fluxo
+  não há homologação em staging antes de produção.
+- Se a pipeline abre um MR automático de sincronização (produção → desenvolvimento),
+  merge ele antes da próxima promoção normal.
+
+> **Adapte ao instalar**: nomes de branch, esquema de versão e o que a pipeline faz no
+> merge são do repositório — documente no `CLAUDE.md` dele e ajuste os bullets acima.
+
+## 6. Se o fluxo cria o MR automaticamente
 
 Alguns fluxos (worktree por card, script de setup) já abrem o MR em draft ao criar o branch —
 rodar o script de novo só imprime a URL. Nesse caso:
